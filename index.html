@@ -14,13 +14,88 @@
 <main>
     <div class="main">
         <section>
-            <img src="pictures/happyBirthday.png" alt="" class="HB">
+                <!-- Белая поздравительная SVG-открытка -->
+                    <svg class="HB"
+                            viewBox="0 0 1200 400"
+                            width="100%"
+                            role="img"
+                            aria-label="Поздравление"
+                            xmlns="http://www.w3.org/2000/svg"
+                    >
+                        <defs>
+                            <!-- Мягкое свечение для текста и декора -->
+                            <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
+                                <feGaussianBlur stdDeviation="6" result="blur"/>
+                                <feMerge>
+                                    <feMergeNode in="blur"/>
+                                    <feMergeNode in="SourceGraphic"/>
+                                </feMerge>
+                            </filter>
+
+                            <!-- Конфетти-элементы как символ -->
+                            <symbol id="confetti" viewBox="0 0 60 60">
+                                <path d="M8 30 q10 -22 22 0 q10 22 22 0" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round" opacity=".85"/>
+                                <circle cx="10" cy="10" r="3" fill="#fff" opacity=".9"/>
+                                <circle cx="50" cy="12" r="2" fill="#fff" opacity=".7"/>
+                                <circle cx="48" cy="48" r="2.5" fill="#fff" opacity=".8"/>
+                                <path d="M12 48 l8 -8" stroke="#fff" stroke-width="3" stroke-linecap="round" opacity=".8"/>
+                            </symbol>
+
+                            <!-- Звёздочки -->
+                            <symbol id="spark">
+                                <path d="M0 -8 L0 8 M-8 0 L8 0" stroke="#fff" stroke-width="2" stroke-linecap="round"/>
+                                <circle r="2" fill="#fff"/>
+                            </symbol>
+                        </defs>
+
+                        <!-- Декор: конфетти по краям -->
+                        <g filter="url(#glow)">
+                            <use href="#confetti" x="40"  y="40"/>
+                            <use href="#confetti" x="1080" y="40" transform="scale(-1,1) translate(-120,0)"/>
+                            <use href="#confetti" x="60"  y="280" transform="rotate(12 90 310)"/>
+                            <use href="#confetti" x="1020" y="270" transform="rotate(-10 1050 300)"/>
+                        </g>
+
+                        <!-- Главный текст -->
+                        <g text-anchor="middle" filter="url(#glow)">
+                            <text
+                                    x="50%" y="52%"
+                                    font-family="Montserrat, Inter, Arial, sans-serif"
+                                    font-size="100"
+                                    font-weight="800"
+                                    fill="#fff"
+                                    letter-spacing="2"
+                            >
+                                С днём рождения!
+                            </text>
+                            <text
+                                    x="50%" y="70%"
+                                    font-family="Inter, Arial, sans-serif"
+                                    font-size="28"
+                                    fill="#C7B2B2FF"
+                                    opacity=".9"
+                            >
+                                Празднует весь казахстан.
+                            </text>
+                        </g>
+
+                        <!-- Сверкающие звёзды -->
+                        <g>
+                            <use href="#spark" x="200" y="120" />
+                            <use href="#spark" x="980" y="110" />
+                            <use href="#spark" x="260" y="330" />
+                            <use href="#spark" x="940" y="320" />
+                        </g>
+
+                        <!-- Тонкая рамка -->
+                        <rect x="10" y="10" width="1180" height="380" rx="20" ry="20" fill="none" stroke="#fff" stroke-width="2" opacity=".6"/>
+                    </svg>
+                </section>
             <img src="pictures/goshaHB.png" alt="" class="FunnyGosha">
             <p class="text">All hail
                 <mark>Гоша!</mark>
                 ↓
             </p>
-        </section>
         <section>
             <audio src="audio/goshaHB.mp3" controls></audio>
         </section>
@@ -38,4 +113,5 @@ Powered by Source 2 filmmaker;
     </pre>
 </footer>
 </body>
+
 </html>
